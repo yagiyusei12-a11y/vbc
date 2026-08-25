@@ -1,14 +1,16 @@
 {
   "name": "vbc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "start": "react-native start",
-    "android": "react-native run-android",
+    "env": "powershell -ExecutionPolicy Bypass -File scripts/windows/refresh-env.ps1",
+    "start": "react-native start --port 8081",
+    "android": "powershell -ExecutionPolicy Bypass -File scripts/windows/run-android-dev.ps1",
     "android:release": "powershell -ExecutionPolicy Bypass -File scripts/windows/build-release-aab.ps1",
     "android:apk": "powershell -ExecutionPolicy Bypass -File scripts/windows/build-release-apk.ps1",
-    "keystore": "powershell -ExecutionPolicy Bypass -File scripts/windows/create-keystore.ps1"
+    "keystore": "powershell -ExecutionPolicy Bypass -File scripts/windows/create-keystore.ps1",
+    "icons:android": "python scripts/generate-android-icons.py"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",

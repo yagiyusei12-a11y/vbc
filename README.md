@@ -11,11 +11,18 @@ React Native（TypeScript）のローカル保存型バレーボールアプリ�
 
 ## 開発（Windows）
 
+`java` / `adb` が認識されないときは、**Cursor を完全終了して開き直す**か、次を実行:
+
 ```powershell
 cd c:\Users\info\app\vbc
-npm install
+. .\scripts\windows\refresh-env.ps1
+```
+
+その後:
+
+```powershell
 npm start
-# 別ターミナル
+# 別ターミナル（同様に refresh-env を実行してから）
 npm run android
 ```
 
